@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import SidebarTab from './SidebarTab'
 import MaterialPanel from './MaterialPanel'
+import LightingPanel from './LightingPanel'
 import { 
   MaterialsIcon, 
   FinishesIcon, 
@@ -12,7 +13,7 @@ import {
 } from './SidebarIcons'
 import { sidebarStyles } from '../styles/sidebarStyles'
 
-function Sidebar({ isVisible, onTabClick, activeTab, styleTheme = 'glassmorphism', isCollapsing, onMaterialChange, currentMaterial }) {
+function Sidebar({ isVisible, onTabClick, activeTab, styleTheme = 'glassmorphism', isCollapsing, onMaterialChange, currentMaterial, onLightingChange, currentLighting, lightingPreviewMode, onLightingPreviewModeChange, useHDRI, onHDRIToggle }) {
   const sidebarRef = useRef()
   const tabsRef = useRef([])
   
@@ -154,6 +155,19 @@ function Sidebar({ isVisible, onTabClick, activeTab, styleTheme = 'glassmorphism
           <MaterialPanel 
             onMaterialChange={onMaterialChange}
             currentMaterial={currentMaterial}
+          />
+        </div>
+      )}
+      
+      {activeTab === 'lighting' && (
+        <div className="sidebar-panel">
+          <LightingPanel 
+            onLightingChange={onLightingChange}
+            currentLighting={currentLighting}
+            lightingPreviewMode={lightingPreviewMode}
+            onLightingPreviewModeChange={onLightingPreviewModeChange}
+            useHDRI={useHDRI}
+            onHDRIToggle={onHDRIToggle}
           />
         </div>
       )}

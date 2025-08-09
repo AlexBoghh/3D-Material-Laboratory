@@ -17,6 +17,15 @@
   border-radius: 12px;
   position: relative;
   z-index: 0;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Lighting Preview Mode - Dark background for better contrast */
+.background-rectangle.lighting-preview-mode {
+  background-color: #2a2a2a;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Cube Overlay - Fixed at screen center, always on top */
@@ -501,6 +510,300 @@
 
 .sidebar-panel::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.25);
+}
+
+/* Lighting Panel Styles - Minimal Design */
+.lighting-panel-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lighting-panel-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.lighting-section-title {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* Lighting Presets Grid */
+.presets-grid-minimal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.preset-card-minimal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  background: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.preset-card-minimal:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.preset-card-minimal.selected {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.preset-icon-minimal {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.preset-card-minimal:hover .preset-icon-minimal {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.preset-name-minimal {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.preset-card-minimal.selected .preset-name-minimal {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+}
+
+/* Lighting Controls */
+.lighting-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.control-group-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-label-minimal {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* Slider Styles */
+.slider-minimal {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.08);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.slider-minimal:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.slider-minimal::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider-minimal::-webkit-slider-thumb:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.slider-minimal::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.slider-minimal::-moz-range-thumb:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Select Styles */
+.select-minimal {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.select-minimal:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.select-minimal:focus {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Toggle Styles */
+.toggle-label-minimal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.toggle-minimal {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.toggle-minimal:checked {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+.toggle-minimal:checked::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.toggle-text-minimal {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.toggle-label-minimal:hover .toggle-minimal {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.toggle-label-minimal:hover .toggle-text-minimal {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive Lighting Panel */
+@media (max-width: 768px) {
+  .lighting-panel-minimal {
+    gap: 16px;
+  }
+  
+  .presets-grid-minimal {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  
+  .preset-card-minimal {
+    padding: 10px 6px;
+  }
+  
+  .preset-icon-minimal {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .preset-name-minimal {
+    font-size: 10px;
+  }
+  
+  .lighting-controls {
+    gap: 12px;
+  }
+  
+  .control-group-minimal {
+    gap: 6px;
+  }
+  
+  .control-label-minimal {
+    font-size: 11px;
+  }
+  
+  .slider-minimal::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .slider-minimal::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .select-minimal {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .toggle-minimal {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .toggle-text-minimal {
+    font-size: 11px;
+  }
 }
 
 /* Responsive Material Panel */

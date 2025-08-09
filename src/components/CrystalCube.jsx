@@ -65,19 +65,20 @@ function CrystalCube({ isDragging, isExpanded = false, materialProps = {} }) {
     }
   }, [materialProps])
 
-  // Default material values
+  // Default material values - optimized for better lighting visibility
   const defaultMaterial = {
-    color: materialProps.color || '#d0d0d0',
-    transmission: materialProps.transmission !== undefined ? materialProps.transmission : 0.95,
-    opacity: materialProps.opacity !== undefined ? materialProps.opacity : 0.4,
+    color: materialProps.color || '#e0e0e0', // Slightly brighter default
+    transmission: materialProps.transmission !== undefined ? materialProps.transmission : 0.85, // Less transparent
+    opacity: materialProps.opacity !== undefined ? materialProps.opacity : 0.6, // More opaque
     metalness: materialProps.metalness !== undefined ? materialProps.metalness : 0.05,
-    roughness: materialProps.roughness !== undefined ? materialProps.roughness : 0.0,
-    thickness: materialProps.thickness !== undefined ? materialProps.thickness : 0.5,
+    roughness: materialProps.roughness !== undefined ? materialProps.roughness : 0.1, // Slight roughness
+    thickness: materialProps.thickness !== undefined ? materialProps.thickness : 0.8, // Thicker for better refraction
     clearcoat: materialProps.clearcoat !== undefined ? materialProps.clearcoat : 1,
     clearcoatRoughness: materialProps.clearcoatRoughness !== undefined ? materialProps.clearcoatRoughness : 0.05,
-    envMapIntensity: materialProps.envMapIntensity !== undefined ? materialProps.envMapIntensity : 1,
+    envMapIntensity: materialProps.envMapIntensity !== undefined ? materialProps.envMapIntensity : 1.2, // Higher environment reflection
     ior: materialProps.ior !== undefined ? materialProps.ior : 1.5,
-    reflectivity: materialProps.reflectivity !== undefined ? materialProps.reflectivity : 0.5
+    reflectivity: materialProps.reflectivity !== undefined ? materialProps.reflectivity : 0.7, // More reflective
+    transparent: materialProps.transparent !== undefined ? materialProps.transparent : true
   }
 
   return (
